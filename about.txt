@@ -1,0 +1,14 @@
+********************
+  STAGE 1
+********************
+# use structure
+components/component_folder/
+  index.js 
+  style.css
+
+# no redux, no router
+
+********************
+  STAGE 2
+********************
+# create and use tests
