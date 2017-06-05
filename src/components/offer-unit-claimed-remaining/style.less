@@ -1,0 +1,36 @@
+@import '../../style-global/variables';
+
+.offerUnitClaimedWrapper {
+  margin-top: @vertical-elem-margin_extra-large;
+  width: 100%;
+  float: left;
+  font-size: 12px;
+}
+
+.indicatorWrapper {
+  background: #ccc;
+  width: 85%;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  height: 12px;
+  margin-top: @vertical-elem-margin_small;
+  border-radius: 8px;
+}
+
+.indicator {
+  background: #e48aa5; /* Old browsers */
+  background: -moz-linear-gradient(left, #e48aa5 0%, #c75074 40%, #c7003d 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #e48aa5 0%,#c75074 40%,#c7003d 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #e48aa5 0%,#c75074 40%,#c7003d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e48aa5', endColorstr='#c7003d',GradientType=1 ); /* IE6-9 */
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.soldOut {
+  color: @color-textCol;
+}

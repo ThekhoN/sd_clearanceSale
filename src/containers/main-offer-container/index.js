@@ -6,6 +6,8 @@ import OfferUnitLi from '../../components/offer-unit-li';
 import style from './style.less';
 console.log('style mainOfferContainer: ', style);
 
+const eventId = 'DealofDayOffers';
+
 export default class MainOfferContainer extends Component {
   constructor (props) {
     super(props);
@@ -36,7 +38,10 @@ export default class MainOfferContainer extends Component {
     return (
       <div class={style.mainOfferContainer}>
         <OfferUnitUl>
-          {data.map(item => <OfferUnitLi item={item} />)}
+          {/* {data.map(item => <OfferUnitLi item={item} />)} */}
+          {data
+            .filter(offer => offer.eventId === eventId)
+            .map((item, i) => <OfferUnitLi item={item} />)}
         </OfferUnitUl>
       </div>
     );

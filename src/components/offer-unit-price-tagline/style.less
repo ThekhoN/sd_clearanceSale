@@ -7,6 +7,7 @@
   text-align: left;
   float: left;
   width: 100%;
+  margin-top: @vertical-elem-margin_medium;
 }
 
 .offerUnitMRP {
@@ -22,4 +23,13 @@
   height: 20px;
   font-family: @font-sansSerifFontBold;
   color: @color-textCol_dark;
+}
+
+@media (min-width: @bp-laptop) {
+  .offerUnitMRP {
+    font-size: 13px;
+  }
+  .offerUnitDisplayPriceTagline {
+    font-size: 14px;
+  }
 }

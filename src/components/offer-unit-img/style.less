@@ -1,6 +1,7 @@
 @import '../../style-global/variables';
 
 .imgOfferUnit {
+  padding: 1.6% 0;
   width: 50%;
   float: left;
   text-align: center;
@@ -20,12 +21,16 @@
   }
 
   img {
-    max-width: 100%;
-    height: auto;
+    width: @size-fximgSizeWidth_small;
+    height: @size-fximgSizeHeight_small;
   }
 }
 
-@media (min-width: @bp-tablet) {
+@media (min-width: @bp-laptop) {
+  .imgOfferUnit img {
+    width: @size-fximgSizeWidth;
+    height: @size-fximgSizeHeight;
+  }
   .imgOfferUnit span {
     width: @size-fximgSizeWidth;
     height: @size-fximgSizeHeight;

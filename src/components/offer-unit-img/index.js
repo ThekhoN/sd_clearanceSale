@@ -4,7 +4,7 @@ import {isLegitPogIdItem} from '../../modules/validateData';
 import SdPlusLogo from '../sd-plus-logo';
 import style from './style.less';
 
-const ImgOfferUnit = ({item}) => {
+const OfferUnitImg = ({item}) => {
   let offerImageUrl, userDefinedImageUrl, sdgold, offerName;
   offerName = item.offerName || '';
   if (MobPlatformCheck()) {
@@ -20,11 +20,11 @@ const ImgOfferUnit = ({item}) => {
   return (
     <div class={style.imgOfferUnit}>
       {sdgold && <SdPlusLogo />}
-      <span>
+      <span className='img--constrain-size offer-unit__img-preload'>
         <img src={offerImageUrl} alt={offerName} />
       </span>
     </div>
   );
 };
 
-export default ImgOfferUnit;
+export default OfferUnitImg;

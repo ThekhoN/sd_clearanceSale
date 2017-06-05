@@ -2,11 +2,17 @@ import {h} from 'preact';
 import style from './style.less';
 import {isLegitPogIdItem} from '../../modules/validateData';
 
+const OfferUnitDiscountWrapper = ({children}) => (
+  <div class={style.offerUnitDiscountWrapper}>
+    {children}
+  </div>
+);
+
 const OfferUnitDiscount = ({item}) => {
   if (isLegitPogIdItem(item)) {
     const {discount} = item.commonMinProductDetailsDTO.priceInfo;
     if (!discount || discount === null || discount === 0) {
-      return null;
+      return <OfferUnitDiscountWrapper />;
     } else {
       if (discount > 10) {
         return (
@@ -15,7 +21,7 @@ const OfferUnitDiscount = ({item}) => {
           </div>
         );
       } else {
-        return null;
+        return <OfferUnitDiscountWrapper />;
       }
     }
   }

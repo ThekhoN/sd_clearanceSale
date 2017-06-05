@@ -1,7 +1,6 @@
 @import '../../style-global/variables';
 
 .offerUnitTitle {
-  margin-top: 4px!important;
   overflow: hidden;
   box-sizing: border-box;
   text-align: left;
@@ -9,18 +8,25 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   font-size: 12px;
-  height: 36px;
+  height: 32px; // 36px
   line-height: 1.3;
   position: relative;
 
   &:after {
     content: '';
     position: absolute;
-    height: 6px;
+    height: 4px; // 6px
     width: 100%;
     background: #fff;
     z-index: 1;
     left: 0;
     bottom: 0;
+  }
+}
+
+@media (min-width: @bp-laptop) {
+  .offerUnitTitle {
+    font-size: 13px;
+    height: 33px;
   }
 }

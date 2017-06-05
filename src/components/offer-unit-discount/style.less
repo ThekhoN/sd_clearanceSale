@@ -1,10 +1,13 @@
 @import '../../style-global/variables';
 
 .offerUnitDiscountWrapper {
+  width: 100%;
   float: left;
   height: 18px;
   font-size: 12px;
   font-family: @font-sansSerifFontBold;
+  color: @color-textCol_dark;
+  margin-top: @vertical-elem-margin_small;
 
   span {
     display: inline-block;
@@ -12,5 +15,11 @@
     border: 1px solid @color-border;
     padding: 2px 5px 1px;
     border-radius: 2px;
+  }
+}
+
+@media (min-width: @bp-laptop) {
+  .offerUnitDiscountWrapper {
+    font-size: 14px;
   }
 }
