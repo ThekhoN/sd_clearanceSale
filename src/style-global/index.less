@@ -21,4 +21,29 @@
 .preact-mount-node {
   font-family: @font-sansSerifFont;
   background: @color-border_extra-light;
+  max-width: 1;
+}
+
+.preact-mount-node {
+  // li div {
+  //   margin-top: 0;
+  // }
+}
+
+.main-offer-container {
+  max-width: @max-width-large;
+  margin: 0 auto;
+  min-height: 110vh;
+}
+
+@media (min-width: @max-width-large) {
+  .main-offer-container {
+    background: white;
+  }
+}
+
+@media (min-width: @max-width-largest) {
+  .main-offer-container {
+    max-width: @max-width-largest;
+  }
 }

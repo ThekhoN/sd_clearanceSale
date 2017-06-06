@@ -1,0 +1,29 @@
+@import '../../style-global/variables';
+
+.headerTitle {
+    background: #a5a6a7;
+    background-image: linear-gradient(97deg,#64ecba,#008de7);
+    text-align: center;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 1.6em 0;
+
+
+    h3 {
+      line-height: 1.2;
+      font-size: 1em;
+      font-weight: 400;
+      text-align: center;
+      color: white;
+      width: 100%;
+    }
+}
+
+@media (min-width: @bp-tablet) {
+  .headerTitle {
+    margin-bottom: @vertical-elem-margin_larger;
+  }
+  .headerTitle h3 {
+    font-size: 1.5em;
+  }
+}

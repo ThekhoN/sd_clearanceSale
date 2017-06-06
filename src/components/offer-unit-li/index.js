@@ -57,7 +57,6 @@ export default class OfferUnitLi extends Component {
       return null;
     }
     if (item.commonMinProductDetailsDTO.soldOut) {
-      console.log('is soldOUt.. .');
       return (
         <li class={[style.offerUnitLi, style.soldOut].join(' ')}>
           <OfferUnitImg item={item} />

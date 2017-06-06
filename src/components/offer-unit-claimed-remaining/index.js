@@ -30,12 +30,21 @@ export const OfferUnitRemainingSingle = ({claimedPercentage}) => (
 
 export const OfferUnitClaimedFresh = () => (
   <div className={style.offerUnitClaimedWrapper}>
-    <div>Freshly stocked</div>
-    <div className={style.indicatorWrapper} style={{backgroundColor:'white'}}>
-      <div className={style.indicator}></div>
+    <div>0% claimed</div>
+    <div className={style.indicatorWrapper}>
+      <div className={style.indicator} style={{width: `0%`}}></div>
     </div>
   </div>
 );
+
+// export const OfferUnitClaimedFresh = () => (
+//   <div className={style.offerUnitClaimedWrapper}>
+//     <div>Freshly stocked</div>
+//     <div className={style.indicatorWrapper} style={{backgroundColor:'white'}}>
+//       <div className={style.indicator}></div>
+//     </div>
+//   </div>
+// );
 
 export const OfferUnitClaimedSoldOut = () => (
   <div className={style.offerUnitClaimedWrapper}>

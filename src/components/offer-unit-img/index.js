@@ -4,7 +4,15 @@ import {isLegitPogIdItem} from '../../modules/validateData';
 import SdPlusLogo from '../sd-plus-logo';
 import style from './style.less';
 
-const OfferUnitImg = ({item}) => {
+const OfferUnitImg = ({item, placeholder}) => {
+  if (placeholder) {
+    return (
+      <div class={style.imgOfferUnit}>
+        <span className='img--constrain-size offer-unit__img-preload'>
+        </span>
+      </div>
+    );
+  }
   let offerImageUrl, userDefinedImageUrl, sdgold, offerName;
   offerName = item.offerName || '';
   if (MobPlatformCheck()) {
