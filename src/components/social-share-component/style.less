@@ -1,0 +1,118 @@
+.wrapper {
+  width: 100%;
+  background: #f7f7f7;
+  height: 60px;
+}
+.shareThisPage {
+  width: 245px;
+  height: 60px;
+  float: none;
+  margin: 0 auto;
+}
+@media (min-width: 480px) {
+  .shareThisPage {
+    width: 336px;
+    float: right;
+  }
+}
+.verticalCenter {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.airPlane {
+  width: 25px;
+  height: 25px;
+  float: left;
+  background: url('https://i1.sdlcdn.com/static/img/marketing-mailers/mailer/2016/x_999/diwaliF_plane.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.shareThisPageTxt {
+  float: left;
+  height: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  color: #666;
+  padding: 6px;
+
+  & > span {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .shareThisPageTxt span {
+    display: inline;
+  }
+}
+
+.iconWrapper {
+  float: left;
+
+  & > span {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    border-radius: 2px;
+    float: left;
+    text-align: center;
+    transition: all .2s cubic-bezier(.86,.065,.45,.895);
+    cursor: pointer;
+  }
+
+  i {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+  }
+
+  & > span:hover {
+    background: #059ff5;
+  }
+}
+
+.bgSprite {
+    background-image: url('https://i1.sdlcdn.com/static/img/marketing-mailers/mailer/2016/x_999/diwaliF_spriteSheet01.png');
+    background-repeat: no-repeat;
+}
+
+.facebook {
+  i {
+    background-position: -5px -5px;
+  }
+  &:hover i {
+    background-position: -35px -5px;
+  }
+}
+
+.google {
+  i {
+    background-position: -5px -35px;
+  }
+  &:hover i {
+    background-position: -35px -35px;
+  }
+}
+
+.pinterest {
+  i {
+    background-position: -65px -5px;
+  }
+  &:hover i {
+    background-position: -65px -35px;
+  }
+}
+
+.twitter {
+  i {
+    background-position: -5px -65px;
+  }
+  &:hover i {
+    background-position: -35px -65px;
+  }
+}

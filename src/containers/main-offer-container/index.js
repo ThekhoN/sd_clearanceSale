@@ -8,6 +8,7 @@ import OfferUnitUl from '../../components/offer-unit-ul';
 import OfferUnitLi from '../../components/offer-unit-li';
 import OfferUnitLiPlaceholderGroup6X from '../../components/offer-unit-li-placeholder';
 import HeaderTitle from '../../components/header-title';
+import SocialShareComponent from '../../components/social-share-component';
 
 // global
 const eventId = 'DealofDayOffers';
@@ -42,13 +43,14 @@ export default class MainOfferContainer extends Component {
     const {data} = this.state;
     return (
       <div class='main-offer-container'>
-        <HeaderTitle title='Clearance Corner' />
+        <HeaderTitle title='GOING..GOING..GONE Sale' subTitle='Only Till Stocks Last!' />
         <OfferUnitUl>
           {this.state.showPlaceholder && <OfferUnitLiPlaceholderGroup6X />}
           {data
             .filter(offer => offer.eventId === eventId)
             .map((item, i) => <OfferUnitLi item={item} />)}
         </OfferUnitUl>
+        <SocialShareComponent />
       </div>
     );
   }
