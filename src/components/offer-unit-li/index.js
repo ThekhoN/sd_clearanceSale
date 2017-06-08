@@ -10,6 +10,14 @@ import OfferUnitDiscount from '../offer-unit-discount';
 import {OfferUnitClaimed, OfferUnitRemaining, OfferUnitRemainingSingle, OfferUnitClaimedSoldOut, OfferUnitClaimedFresh} from '../offer-unit-claimed-remaining';
 import style from './style.less';
 
+// reference
+const RefInventoryComponent = ({buyableInventory}) =>
+(
+  <div className={style.refInventoryComponent}>
+    buyable Inventory Left: <span>{buyableInventory}</span>
+  </div>
+);
+
 // utils
 import {isISObject} from '../../modules/validateData';
 // global
@@ -52,7 +60,7 @@ export default class OfferUnitLi extends Component {
     // }
   }
   render () {
-    const {item} = this.props;
+    const {item, showBuyableInventory} = this.props;
     if (!item || !item.pogId || !isISObject(item.commonMinProductDetailsDTO) || !item.commonMinProductDetailsDTO.vendorDTO) {
       return null;
     }
@@ -67,6 +75,7 @@ export default class OfferUnitLi extends Component {
               <OfferUnitPriceTagline item={item} />
               <OfferUnitDiscount item={item} />
               <OfferUnitClaimedSoldOut />
+              {showBuyableInventory && <RefInventoryComponent buyableInventory={item.commonMinProductDetailsDTO.vendorDTO.buyableInventory} />}
             </AlignVerticalCenter>
           </NonImgWrapper>
         </li>
@@ -83,6 +92,7 @@ export default class OfferUnitLi extends Component {
                 <OfferUnitPriceTagline item={item} />
                 <OfferUnitDiscount item={item} />
                 {this.handleRenderOfferUnitClaimed()}
+                {showBuyableInventory && <RefInventoryComponent buyableInventory={item.commonMinProductDetailsDTO.vendorDTO.buyableInventory} />}
               </AlignVerticalCenter>
             </NonImgWrapper>
           </OfferUnitLink>

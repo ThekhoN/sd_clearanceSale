@@ -2,12 +2,11 @@ import {h, Component} from 'preact';
 import {polyfill} from 'es6-promise';
 polyfill();
 import axios from 'axios';
-// require('es6-promise').polyfill();
 import url from '../../api';
 import OfferUnitUl from '../../components/offer-unit-ul';
 import OfferUnitLi from '../../components/offer-unit-li';
 import OfferUnitLiPlaceholderGroup6X from '../../components/offer-unit-li-placeholder';
-import HeaderTitle from '../../components/header-title';
+// import HeaderTitle from '../../components/header-title';
 import SocialShareComponent from '../../components/social-share-component';
 
 // global
@@ -18,7 +17,8 @@ export default class MainOfferContainer extends Component {
     super(props);
     this.state = {
       data: [],
-      showPlaceholder: true
+      showPlaceholder: true,
+      showBuyableInventory: false
     };
   }
   componentDidMount () {
@@ -40,15 +40,15 @@ export default class MainOfferContainer extends Component {
       });
   }
   render () {
-    const {data} = this.state;
+    const {data, showBuyableInventory} = this.state;
     return (
       <div class='main-offer-container'>
-        <HeaderTitle title='GOING..GOING..GONE Sale' subTitle='Only Till Stocks Last!' />
+        {/* <HeaderTitle title='GOING..GOING..GONE Sale' subTitle='Only Till Stocks Last!' /> */}
         <OfferUnitUl>
           {this.state.showPlaceholder && <OfferUnitLiPlaceholderGroup6X />}
           {data
             .filter(offer => offer.eventId === eventId)
-            .map((item, i) => <OfferUnitLi item={item} />)}
+            .map((item, i) => <OfferUnitLi item={item} showBuyableInventory={showBuyableInventory} />)}
         </OfferUnitUl>
         <SocialShareComponent />
       </div>
