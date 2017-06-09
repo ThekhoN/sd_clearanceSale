@@ -61,7 +61,8 @@ export default class OfferUnitLi extends Component {
   }
   render () {
     const {item, showBuyableInventory} = this.props;
-    if (!item || !item.pogId || !isISObject(item.commonMinProductDetailsDTO) || !item.commonMinProductDetailsDTO.vendorDTO || !item.commonMinProductDetailsDTO.vendorDTO.buyableInventory) {
+    // !item.commonMinProductDetailsDTO.priceInfo in case of discontinued items
+    if (!item || !item.pogId || !isISObject(item.commonMinProductDetailsDTO) || !item.commonMinProductDetailsDTO.vendorDTO || !item.commonMinProductDetailsDTO.priceInfo) {
       return null;
     }
     if (item.commonMinProductDetailsDTO.soldOut) {
